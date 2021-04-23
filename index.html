@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" rel="preload" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="preload" as="style">
-    <link type="text/css" href="style.06cc1ffe7cfe76a0a9440f6b2825e8e6.css" rel="stylesheet">
+    <link type="text/css" href="style.e1cc6c2eb14d67a973165cb0a23cc1b4.css" rel="stylesheet">
     
     <link 
       href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" 
@@ -25,6 +25,7 @@
     />
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="/assets/highlightjs/androidstudio.css" rel="stylesheet">
 
     <meta name="description" content="***">
     <title>Home</title>
@@ -45,12 +46,31 @@
     <meta name="twitter:description" content="***">
     <meta name="twitter:image" content="https://callback-stack.github.io/assets/common/verb-og.png">
     <meta name="twitter:title" content="Home">
+    
+    <script src="/assets/highlightjs/highlight.pack.js"></script>
   </head>
   
   <body>
 
-    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255 active" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="home-88u">Home 1</div></div><div class="footer-46l"></div></div></div></div>
+    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be css-1f62mig"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255 active" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="home-88u"><div class="section"><h1>Getting Started</h1><div class=""><div class="">Installation:</div><pre class="code-7vj"><code class="nohighlight">npm i --save cs-react</code></pre></div><div class=""><div class="">Simple state:</div><pre class=""><pre class="code-7vj"><code class="nohighlight">import * as React from &quot;react&quot;;
+import {cs, State} from &quot;cs-react&quot;;
     
-    <script src="bundle.0deab013bd747a877923.js" type="application/javascript" async></script>
+const Example = () =&gt; cs(
+    [&quot;count&quot;, ({}, next) =&gt; State({initValue: 0, next})],
+    ({count})=&gt;(
+        &lt;div&gt;
+            Count: {count.value}
+            &lt;button
+                onClick={()=&gt;count.change((v)=&gt;v+1)}
+            &gt;+&lt;/button&gt;
+
+            &lt;button
+                onClick={()=&gt;count.change((v)=&gt;v-1)}
+            &gt;-&lt;/button&gt;
+        &lt;/div&gt;
+    ),
+);</code></pre></pre></div></div></div></div><div class="footer-46l"></div></div></div></div>
+    
+    <script src="bundle.7cf2e32391e7585c8374.js" type="application/javascript" async></script>
   </body>
 </html>
