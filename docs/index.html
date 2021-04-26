@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" rel="preload" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="preload" as="style">
-    <link type="text/css" href="style.cd19d4a2114ac451a91c482c7e9c0ad6.css" rel="stylesheet">
+    <link type="text/css" href="style.5526545543fa826bbe5574592f48bd1c.css" rel="stylesheet">
     
     <link 
       href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" 
@@ -52,8 +52,24 @@
   
   <body>
 
-    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be css-1f62mig"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255 active" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="docs-5ve">Docs<ul class=""><li>Getting Started</li><li>Compare with other frameworks: Hooks, Redux</li><li>Compatibility: All react, any browser</li><li>Migration</li><li>Usage in other languages, frameworks </li><li>Interaction with other frameworks </li><li> </li></ul></div></div><div class="footer-46l"></div></div></div></div>
+    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255 active" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="docs-5ve"><div class="menu"><div class="doc"><div class="label">Comparison with other Frameworks</div><div class="children"><div class="doc"><div class="label">Compare with Hooks</div><div class="children"><div class="doc"><div class="label">All nodes are local</div></div></div></div></div></div></div><div class="content"><div class="title">All nodes are local</div><div class="content"><div class="">With Hooks, all hooks must be declared at the top of Component code, and are strictly forbidden to be declared in if/else or loops. That restriction is not applied to CS. For example:<pre class="code-7vj"><code>cs(
+    [&quot;count1&quot;, ({}, next) =&gt; State({initValue: 0, next})],
+    ({count1})=&gt;(
+        &lt;div&gt;
+            Count 1: {count1.value}
+            
+            {count1.value &gt; 10 &amp;&amp; cs(
+                [&quot;count2&quot;, ({}, next) =&gt; State({initValue: 0, next})],
+                ({count2})=&gt;(
+                    &lt;div&gt;
+                        Count 2: {count2.value}
+                    &lt;/div&gt;
+                ),
+            )}
+        &lt;/div&gt;
+    ),
+);</code></pre>In above example, there are 2 count states, but only count1 is declared at the top level stack. The second state &quot;count2&quot; will be created only if count1 value is &gt; 10 and it will be used only inside that condition. Also when the that condition is no longer true, the state count2 would be destroyed.</div></div></div></div></div><div class="footer-46l"></div></div></div></div>
     
-    <script src="bundle.860f6fd8fc1a8ac85e7d.js" type="application/javascript" async></script>
+    <script src="bundle.ba91f5ca6b33a473d8f7.js" type="application/javascript" async></script>
   </body>
 </html>
