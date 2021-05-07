@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" rel="preload" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="preload" as="style">
-    <link type="text/css" href="style.2e591fbd6f19ce564f719108234cd5cb.css" rel="stylesheet">
+    <link type="text/css" href="style.fef27888231864031cf72f4b1c4c3f53.css" rel="stylesheet">
     
     <link 
       href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" 
@@ -47,12 +47,12 @@
     <meta name="twitter:image" content="https://callback-stack.github.io/assets/common/verb-og.png">
     <meta name="twitter:title" content="APIs">
     
-    <script src="/assets/highlightjs/highlight.pack.js"></script>
+<!--    <script src="/assets/highlightjs/highlight.pack.js"></script>-->
   </head>
   
   <body>
 
-    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255 active" href="/api/">API</a><a class="menu-item menu-item-255" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="api-33o"><div class="components"><div class="component"><h2 class="name">State</h2><div class="params"><div class="title">Params:</div><div class="list"><div class="param">initValue</div>, <div class="param">getInitValue</div>, <div class="next">next</div></div></div><div class="next"><div class="title">Next value:</div><div class="object">An object with attributes:<!-- --> <div class="attribute">value</div>, <div class="attribute">change</div>, <div class="attribute">onChange</div></div></div><div class="content"><div class="">Sample:</div><div class="code-sample-4ej"><pre class="code-7vj"><code>import * as React from &quot;react&quot;;
+    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255 active" href="/api/">API</a><a class="menu-item menu-item-255" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="api-33o"><div class="components"><div class="component"><h2 class="name">State</h2><div class="params"><div class="title">Params:</div><div class="list"><div class="param">initValue</div>, <div class="param">getInitValue</div>, <div class="next">next</div></div></div><div class="next"><div class="title">Next value:</div><div class="object">An object with attributes:<!-- --> <div class="attribute">value</div>, <div class="attribute">change</div>, <div class="attribute">onChange</div></div></div><div class="content"><div class="">Sample:</div><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">import * as React from &quot;react&quot;;
 import {cs, State} from &quot;cs-react&quot;;
 
 const Example = () =&gt; cs(
@@ -69,7 +69,7 @@ const Example = () =&gt; cs(
             &gt;-&lt;/button&gt;
         &lt;/div&gt;
     ),
-);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/JjEmOpP?editors=0010">demo</a></div></div><div class="">Both &quot;change&quot; and &quot;onChange&quot; functions are asynchronous, which means right after you change the state, the state.value won&#x27;t be changed immediately, instead, the change is scheduled and will be applied in future. For example:<div class="code-sample-4ej"><pre class="code-7vj"><code>import * as React from &quot;react&quot;;
+);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/JjEmOpP?editors=0010">demo</a></div></div><div class="">Both &quot;change&quot; and &quot;onChange&quot; functions are asynchronous, which means right after you change the state, the state.value won&#x27;t be changed immediately, instead, the change is scheduled and will be applied in future. For example:<div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">import * as React from &quot;react&quot;;
 import {cs, State} from &quot;cs-react&quot;;
 
 const Example = () =&gt; cs(
@@ -92,6 +92,6 @@ const Example = () =&gt; cs(
     ),
 );</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/ZEeEXZJ?editors=0011">demo</a></div></div></div></div></div><div class="component"><h2 class="name">ForceUpdate</h2><div class="content"></div></div><div class="component"><h2 class="name">Invoke</h2><div class="content"></div></div><div class="component"><h2 class="name">Static</h2><div class="content"></div></div><div class="component"><h2 class="name">StaticRef</h2><div class="content"></div></div><div class="component"><h2 class="name">fragments</h2><div class="content"></div></div><div class="component"><h2 class="name">bindInput</h2><div class="content"></div></div><div class="component"><h2 class="name">IgnoreUpdate</h2><div class="content"></div></div><div class="component"><h2 class="name">keyed</h2><div class="content"></div></div><div class="component"><h2 class="name">OnMounted</h2><div class="content"></div></div><div class="component"><h2 class="name">OnUnmounted</h2><div class="content"></div></div><div class="component"><h2 class="name">Effect</h2><div class="content"></div></div><div class="component"><h2 class="name">OnUpdate</h2><div class="content"></div></div><div class="component"><h2 class="name">consumeContext</h2><div class="content"></div></div><div class="component"><h2 class="name">provideContext</h2><div class="content"></div></div><div class="component"><h2 class="name">Load</h2><div class="content"></div></div><div class="component"><h2 class="name">Load2</h2><div class="content"></div></div><div class="component"><h2 class="name">scope</h2><div class="content"></div></div></div></div></div><div class="footer-46l"></div></div></div></div>
     
-    <script src="bundle.e0a77563a65975b13bac.js" type="application/javascript" async></script>
+    <script src="bundle.229a957970d8c17654bb.js" type="application/javascript" async></script>
   </body>
 </html>

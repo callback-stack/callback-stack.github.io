@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" rel="preload" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="preload" as="style">
-    <link type="text/css" href="style.2e591fbd6f19ce564f719108234cd5cb.css" rel="stylesheet">
+    <link type="text/css" href="style.fef27888231864031cf72f4b1c4c3f53.css" rel="stylesheet">
     
     <link 
       href="https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700" 
@@ -47,12 +47,12 @@
     <meta name="twitter:image" content="https://callback-stack.github.io/assets/common/verb-og.png">
     <meta name="twitter:title" content="Documentations">
     
-    <script src="/assets/highlightjs/highlight.pack.js"></script>
+<!--    <script src="/assets/highlightjs/highlight.pack.js"></script>-->
   </head>
   
   <body>
 
-    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255 active" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="docs-5ve"><div class="menu"><div class="doc"><div class="label">Comparison with other Frameworks</div><div class="children"><div class="doc"><div class="label">Compare with Hooks</div><div class="children"><div class="doc"><div class="label">All nodes are local</div></div><div class="doc"><div class="label">Powerful Custom Components</div></div></div></div></div></div></div><div class="content"><div class="doc level-1"><div class="label">Comparison with other Frameworks</div><div class="children"><div class="doc level-2"><div class="label">Compare with Hooks</div><div class="children"><div class="doc level-3"><div class="label">All nodes are local</div><div class="content"><div class=""><div class="">In CS, a component (vs a hook) can be any where, instead of being restricted at the top of render code or not in if, loop code like in Hooks.</div><div class="">For example, here is a state declared in a IF condition:</div><div class="code-sample-4ej"><pre class="code-7vj"><code>cs(
+    <div id="root"><div class="layout-4dd"><div class="restricted-width"><div class="header-7be"><div class="container"><a class="logo" href="/">Callback Stack</a><div class="links"><a class="menu-item menu-item-255" href="/">Home</a><a class="menu-item menu-item-255" href="/api/">API</a><a class="menu-item menu-item-255 active" href="/docs/">Docs</a></div><div class="right-buttons"></div></div></div><div class="content"><div class="docs-5ve"><div class="menu"><div class="doc"><div class="label">Comparison with other Frameworks</div><div class="children"><div class="doc"><div class="label">Compare with Hooks</div><div class="children"><div class="doc"><div class="label">All components are local</div></div><div class="doc"><div class="label">Composition</div></div><div class="doc"><div class="label">Powerful Custom Components</div></div></div></div></div></div></div><div class="content"><div class="doc level-1"><div class="label">Comparison with other Frameworks</div><div class="children"><div class="doc level-2"><div class="label">Compare with Hooks</div><div class="children"><div class="doc level-3"><div class="label">All components are local</div><div class="content"><div class=""><p class="">In CS, a component (vs a hook) can be placed any where instead of being restricted at the top of render code and not in if, loop code like Hooks.</p><p class="">For example, here is a state declared in a IF condition:</p><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">cs(
     [&quot;count1&quot;, ({}, next) =&gt; State({initValue: 0, next})],
     ({count1})=&gt;(
         &lt;div&gt;
@@ -70,7 +70,7 @@
             )}
         &lt;/div&gt;
     ),
-);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/jOBEbea?editors=0010">demo</a></div></div><div class="">In above example, there are 2 count states, but only count1 is declared at the top level stack. The second state &quot;count2&quot; will be created only if count1 value is &gt; 10 and it will be used only inside that condition. Also when the that condition is no longer true, the state count2 would be destroyed.</div><div class="">Here is another example that a state is declared in a loop:</div><div class="code-sample-4ej"><pre class="code-7vj"><code>&lt;div&gt;
+);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/jOBEbea?editors=0010">demo</a></div></div><p class="">In above example, there are 2 count states, but only count1 is declared at the top level stack. The second state &quot;count2&quot; will be created only if count1 value is &gt; 10 and it will be used only inside that condition. Also when the that condition is no longer true, the state count2 would be destroyed.</p><p class="">Here is another example that a state is declared in a loop:</p><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">&lt;div&gt;
     A shopping list:
     
     {[&quot;Apple&quot;, &quot;Orange&quot;, &quot;Tomato&quot;].map((item)=&gt; cs(
@@ -84,7 +84,7 @@
             &lt;/div&gt;
         ),
     ))}
-&lt;/div&gt;</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/GRWgpeq?editors=0010">demo</a></div></div><div class="">In the above example, with each item in the shopping list, a different &quot;count&quot; state will be declared, and they can be interacted with (+ or -) independantly</div></div></div></div><div class="doc level-3"><div class="label">Powerful Custom Components</div><div class="content"><div class=""><div class="">Custom Components are much more powerful than Custom Hooks</div><div class="">A custom component declared in CS way is capable of doing everything that a Custom Hook can do, and much more. A CS custom component can block the rendering, or loop rendering, and other actions to control the logic flow of the rendering (like combining 2 rendering flow).</div><div class="">Here is an example of a custom component which blocks the rendering altogether</div><div class="code-sample-4ej"><pre class="code-7vj"><code>const App = () =&gt; cs(
+&lt;/div&gt;</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/GRWgpeq?editors=0010">demo</a></div></div><p class="">In the above example, with each item in the shopping list, a different &quot;count&quot; state will be declared, and they can be interacted with (+ or -) independantly</p></div></div></div><div class="doc level-3"><div class="label">Composition</div><div class="content"><div class=""><p class="">In CS architecture, when a component need a state, it renders a state node into Virtual DOM tree, same goes for Static reference (or Memo in Hooks) or other effects like OnMounted, OnUnmounted... each function is rendered as a separated node into the Virtual DOM tree. Which means a component will be consisted of multiple &quot;basic&quot; nodes, each one is responsible for a function.</p><p>On the other hand, in Hooks, a component is always rendered as a Virtual DOM node, and each time that component needs a state, it will use a space in the state of that Virtual DOM node. This means no matter how many time you call &quot;useState&quot;, there is only 1 node&#x27;s state being accessed and used. Same goes for all other effects like useEffect, useMemo...</p></div></div></div><div class="doc level-3"><div class="label">Powerful Custom Components</div><div class="content"><div class=""><p class="">In CS, a custom Component is much more powerful than a Custom Hook</p><p class="">A custom component declared in CS way is capable of doing everything that a Custom Hook can do, and much more. A CS custom component can block the rendering, or loop rendering, and other actions to control the logic flow of the rendering (like combining 2 rendering flow).</p><p class="">Here is an example of a custom component which blocks the rendering altogether</p><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">const App = () =&gt; cs(
     [&quot;blocker&quot;, (_, next) =&gt; Blocker({next})],
     ({blocker}) =&gt; (
         &lt;div className=&quot;&quot;&gt;
@@ -99,10 +99,10 @@ const Blocker = ({next}) =&gt; cs(
     ({blocked}) =&gt; !blocked.value &amp;&amp; (
         next({blockNow: () =&gt; blocked.onChange(true)})
     ),
-);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/oNZgbLj?editors=0010">demo</a></div></div><div class="">In the above example, there is a custom component call Blocker. Blocker itself declares a state called &quot;blocked&quot; and with initial value of &quot;false&quot;. If that &quot;blocked&quot; state somehow is &quot;true&quot;, then the &quot;next&quot; function will not be called and &quot;everything will disappear&quot;.</div><div class="">The Blocker component exports a method called &quot;blockNow&quot; which upon invoked will simply change the &quot;blocked&quot; state to &quot;true&quot; and &quot;everything will disappear&quot;.</div><div class="">Here is another example that loops rendering:</div><div class="code-sample-4ej"><pre class="code-7vj"><code>const App = () =&gt; cs(
+);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/oNZgbLj?editors=0010">demo</a></div></div><p class="">In the above example, there is a custom component call Blocker. Blocker itself declares a state called &quot;blocked&quot; and with initial value of &quot;false&quot;. If that &quot;blocked&quot; state somehow is &quot;true&quot;, then the &quot;next&quot; function will not be called and &quot;everything will disappear&quot;.</p><p class="">The Blocker component exports a method called &quot;blockNow&quot; which upon invoked will simply change the &quot;blocked&quot; state to &quot;true&quot; and &quot;everything will disappear&quot;.</p><p class="">Here is another example that loops rendering:</p><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">const App = () =&gt; cs(
     [&quot;shoppingItem&quot;, (_, next) =&gt; LoopMe({list: [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Tomato&quot;], next})],
     ({shoppingItem}) =&gt; (
-        &lt;div className=&quot;&quot;&gt;
+        &lt;div&gt;
             Item: {shoppingItem}
         &lt;/div&gt;
     ),
@@ -114,7 +114,9 @@ const LoopMe = ({list, next}) =&gt; (
             {next(item)}
         &lt;/div&gt;
     ))
-);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/wvJBMJy?editors=0010">demo</a></div></div><div class="">In the above ***</div><div class="">Here is another example that combine 2 rendering flows:</div><div class="code-sample-4ej"><pre class="code-7vj"><code>const App = () =&gt; cs(
+);</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/wvJBMJy?editors=0010">demo</a></div></div><p class="">In the above example, the LoopMe component receive a list of items, and all the rendering logic below it is repeated with each item in the list, which mean this code is actually rendered 3 times.<pre class="code-7vj"><code class="jsx">&lt;div&gt;
+    Item: {shoppingItem}
+&lt;/div&gt;</code></pre></p><p class="">Here is another example that combine 2 rendering flows:</p><div class="code-sample-4ej"><pre class="code-7vj"><code class="jsx">const App = () =&gt; cs(
     ({}, next) =&gt; SecondFlow({next}),
     ({}) =&gt; (
         &lt;div&gt;
@@ -135,8 +137,8 @@ const SecondFlow = ({next: rootNext}) =&gt; cs(
 const CombineFlow = ({flow1, flow2}) =&gt; &lt;&gt;
     {flow1()}
     {flow2()}
-&lt;/&gt;;</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/abJzdVz?editors=0010">demo</a></div></div><div class="">In the above example an additional content is added to the main rendering code. This technique is important to implement components like Tooltip or Modal, where &quot;SecondFlow&quot; component declares how that Tooltip (or Modal) looks like, and the CombineFlow make sure that the additional content only appears when user hover their mouse over a text (Tooltip) or click a button to open the Modal.</div></div></div></div></div></div></div></div></div></div></div><div class="footer-46l"></div></div></div></div>
+&lt;/&gt;;</code></pre><div class="codepen">Here is the CodePen <a target="_blank" href="https://codepen.io/quanla/pen/abJzdVz?editors=0010">demo</a></div></div><p class="">In the above example an additional content is added to the main rendering code. This technique is important to implement components like Tooltip or Modal, where &quot;SecondFlow&quot; component declares how that Tooltip (or Modal) looks like, and the CombineFlow make sure that the additional content only appears when user hover their mouse over a text (Tooltip) or click a button to open the Modal.</p></div></div></div></div></div></div></div></div></div></div><div class="footer-46l"></div></div></div></div>
     
-    <script src="bundle.e0a77563a65975b13bac.js" type="application/javascript" async></script>
+    <script src="bundle.229a957970d8c17654bb.js" type="application/javascript" async></script>
   </body>
 </html>
